@@ -115,7 +115,7 @@ for (person in household) {
 			header: "Kalender " + name,
 			position: "top_left",
 			config: {
-				maximumEntries: 10,
+				maximumEntries: 7,
 				colored: true,
 				maxTitleLength: 30,
 				displaySymbol: false,

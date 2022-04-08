@@ -22,8 +22,8 @@ function createWindow() {
 	let electronSwitchesDefaults = ["autoplay-policy", "no-user-gesture-required"];
 	app.commandLine.appendSwitch(...new Set(electronSwitchesDefaults, config.electronSwitches));
 	let electronOptionsDefaults = {
-		width: 1280,
-		height: 720,
+		width: 768,
+		height: 1366,
 		x: 0,
 		y: 0,
 		darkTheme: true,
@@ -40,7 +40,7 @@ function createWindow() {
 	if (config.kioskmode) {
 		electronOptionsDefaults.kiosk = true;
 	} else {
-		electronOptionsDefaults.fullscreen = false;
+		electronOptionsDefaults.fullscreen = true;
 		electronOptionsDefaults.autoHideMenuBar = true;
 	}
 
@@ -88,7 +88,7 @@ function createWindow() {
 		});
 
 		mainWindow.on("leave-full-screen", function () {
-			mainWindow.setFullScreen(false);
+			mainWindow.setFullScreen(true);
 		});
 
 		mainWindow.on("resize", function () {
